@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="444.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BooksController">
+   <children>
+      <AnchorPane prefHeight="444.0" prefWidth="719.0" style="-fx-background-color: #c7d6e1;">
+         <children>
+            <Button layoutX="5.0" layoutY="377.0" mnemonicParsing="false" onAction="#addBookToDatabase" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: #2f3e47; -fx-background-radius: 20;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Label fx:id="homeMessage" layoutX="8.0" layoutY="7.0" text="Gestion des livres">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="87.0" prefHeight="28.0" prefWidth="95.0" text="Recherche">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchField" layoutX="108.0" layoutY="83.0" onKeyReleased="#filterBooks" prefHeight="36.0" prefWidth="103.0" />
+            <Polygon layoutX="85.0" layoutY="136.0" points="-85.0, 308.0, -85.0, 287.0, 634.0, 308.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.13744075829383887" startY="0.7819905213270142">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.18431372940540314" green="0.24313725531101227" blue="0.27843138575553894" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8509804010391235" green="0.8039215803146362" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Polygon>
+            <Button layoutX="633.0" layoutY="409.0" mnemonicParsing="false" onAction="#backToHome" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #21191c; -fx-background-radius: 20;" text="Retour" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Polygon layoutX="215.0" layoutY="282.0" points="504.0, -282.0, 504.0, -252.0, -215.0, -282.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="0.8151658767772512" endY="0.8293838862559242" startY="0.27014218009478674">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8509804010391235" green="0.8039215803146362" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.18431372940540314" green="0.24313725531101227" blue="0.27843138575553894" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Polygon>
+            <Label layoutX="21.0" layoutY="148.0" prefHeight="21.0" prefWidth="65.0" text="Titre :">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleField" layoutX="90.0" layoutY="145.0" prefHeight="35.0" prefWidth="174.0" />
+            <Label layoutX="13.0" layoutY="195.0" prefHeight="28.0" prefWidth="76.0" text="Auteur :">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="authorField" layoutX="90.0" layoutY="192.0" prefHeight="35.0" prefWidth="174.0" />
+            <Label layoutX="15.0" layoutY="241.0" prefHeight="21.0" prefWidth="65.0" text="Code :">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="codeField" layoutX="90.0" layoutY="240.0" prefHeight="28.0" prefWidth="174.0" />
+            <Label layoutX="14.0" layoutY="282.0" prefHeight="21.0" prefWidth="65.0" text="ISBN :">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="isbnField" layoutX="87.0" layoutY="281.0" prefHeight="28.0" prefWidth="174.0" />
+            <Label layoutX="13.0" layoutY="322.0" prefHeight="27.0" prefWidth="95.0" text="Categorie :">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="categoryBox" layoutX="116.0" layoutY="323.0" prefHeight="25.0" prefWidth="144.0" />
+            <Button layoutX="178.0" layoutY="377.0" mnemonicParsing="false" onAction="#deleteBookFromDatabase" prefHeight="35.0" prefWidth="95.0" style="-fx-background-color: #2f3e47; -fx-background-radius: 20;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="91.0" layoutY="377.0" mnemonicParsing="false" onAction="#modifyBook" prefHeight="35.0" prefWidth="76.0" style="-fx-background-color: #2f3e47; -fx-background-radius: 20;" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="545.0" layoutY="409.0" mnemonicParsing="false" onAction="#refresh" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: #444951; -fx-background-radius: 20;" text="Actualiser" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <TableView fx:id="booksTable" layoutX="289.0" layoutY="38.0" onMouseClicked="#mouseSelectedRow" prefHeight="335.0" prefWidth="422.0">
+              <columns>
+                  <TableColumn fx:id="codeColumn" maxWidth="1700.0" minWidth="5.0" prefWidth="25.0" text="Code" />
+                <TableColumn fx:id="titleColumn" maxWidth="6300.0" prefWidth="57.0" text="Titre" />
+                <TableColumn fx:id="authorColumn" maxWidth="4800.0" prefWidth="111.0" text="Auteur" />
+                  <TableColumn fx:id="isbnColumn" maxWidth="3200.0" prefWidth="75.0" text="ISBN" />
+                  <TableColumn fx:id="categoryColumn" prefWidth="75.0" text="Categorie" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Label fx:id="errorMessage" alignment="TOP_LEFT" contentDisplay="CENTER" layoutX="311.0" layoutY="381.0" prefHeight="27.0" prefWidth="372.0" textAlignment="CENTER" textFill="#fc1717">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="216.0" layoutY="90.0" mnemonicParsing="false" onAction="#clear" style="-fx-background-color: #000000; -fx-background-radius: 50;" text="Effacer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
